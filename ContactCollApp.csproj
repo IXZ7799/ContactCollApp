@@ -49,6 +49,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\user-astronaut.svg" />
+	  <None Remove="Resources\Images\user-businessman.svg" />
+	  <None Remove="Resources\Images\user-detective.svg" />
+	  <None Remove="Resources\Images\user-doctor.svg" />
+	  <None Remove="Resources\Images\user-graduate.svg" />
+	  <None Remove="Resources\Images\user-ninja.svg" />
+	  <None Remove="Resources\Images\user-nurse.svg" />
+	  <None Remove="Resources\Images\user-police.svg" />
+	  <None Remove="Resources\Images\user-robot.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 
