@@ -83,7 +83,7 @@ namespace ContactCollApp
                 {
                     string name = firstName + " " + lastName;
 
-                    Customer newCustomer = new Customer(name, name + "'s house", IdCustomer, imageNames[imgIndex]);
+                    Customer newCustomer = new Customer(name, name + "'s house", 0, imageNames[imgIndex]);
                     imgIndex++;
                     if (imgIndex == imageNames.Length)
                     {
