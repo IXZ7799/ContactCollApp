@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using SQLite;
+using System.ComponentModel.DataAnnotations;
 namespace ContactCollApp;
 
 [Table("Customer")]
 public class Customer
 {
-    [MaxLength(250)]
+    [Required(ErrorMessage = "Name is required")]
+    [System.ComponentModel.DataAnnotations.MaxLength(250)]
     public string Name { get; set; }
     public string Address { get; set; }
 
