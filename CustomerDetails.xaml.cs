@@ -1,3 +1,5 @@
+using Microsoft.Maui.Controls;
+
 namespace ContactCollApp;
 
 public partial class CustomerDetails : ContentPage
@@ -9,7 +11,7 @@ public partial class CustomerDetails : ContentPage
         this.isUpdated = isUpdated;
 
         this.pckImage.Items.Clear();
-        this.pckImage.ItemsSource = CustomerCollection.imageNames;
+        this.pckImage.ItemsSource = CustomerSQLiteDatabase.imageNames;
 
         App thisApp = Application.Current as App;
         thisApp.selectedCustomer = cust;
@@ -26,7 +28,7 @@ public partial class CustomerDetails : ContentPage
 
     private void btnSave_Clicked(object sender, EventArgs e)
     {
-        string selectedImage = CustomerCollection.DEFAULT_IMAGE;
+        string selectedImage = CustomerSQLiteDatabase.DEFAULT_IMAGE;
         string name = this.txtName.Text;
         string address = this.txtAddress.Text;
 
@@ -41,15 +43,19 @@ public partial class CustomerDetails : ContentPage
             thisApp.selectedCustomer.Address = address;
             thisApp.selectedCustomer.ImageName = selectedImage;
 
-            int pos = MainPage.currentCustomers.CustomerList.IndexOf(thisApp.selectedCustomer);
-            MainPage.currentCustomers.CustomerList.RemoveAt(pos);
-
-            MainPage.currentCustomers.CustomerList.Insert(pos, thisApp.selectedCustomer);
+            App.CustomerDatabase.SaveCustomer(thisApp.selectedCustomer);
         }
         else
         {
-            Customer newCust = new Customer(name, address, CustomerCollection.IdCustomer++, selectedImage);
-            MainPage.currentCustomers.CustomerList.Add(newCust);
+            Customer newCust = new Customer(name, address, 0, selectedImage);
+            App.CustomerDatabase.SaveCustomer(newCust);
+            Navigation.PopModalAsync();
         }
+    }
+
+    private void btnDelete_Clicked(object sender, EventArgs e)
+    {
+        App thisApp = Application.Current as App, App.CustomerDatabase.DeleteCustomer(thisApp.selectedCustomer);
+        Navigation.PopModalAsync();
     }
 }
