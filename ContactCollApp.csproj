@@ -53,6 +53,7 @@
 	  <None Remove="Resources\Images\init.png" />
 	  <None Remove="Resources\Images\no_image.png" />
 	  <None Remove="Resources\Images\refresh.png" />
+	  <None Remove="Resources\Images\trash-sharp-solid.svg" />
 	  <None Remove="Resources\Images\user_astronaut.svg" />
 	  <None Remove="Resources\Images\user_businessman.svg" />
 	  <None Remove="Resources\Images\user_detective.svg" />
