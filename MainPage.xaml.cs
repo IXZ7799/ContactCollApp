@@ -14,5 +14,11 @@ public partial class MainPage : ContentPage
         collectionView.ItemsSource = currentCustomers.CustomerList;
     }
 
+    private void collectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        Customer selectedCust = (e.CurrentSelection.FirstOrDefault() as Customer);
+        Navigation.PushModalAsync(new CustomerDetails(selectedCust, true), true);
+    }
+
 }
 

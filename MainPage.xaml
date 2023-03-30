@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ContactCollApp.MainPage">
 
-    <CollectionView x:Name="collectionView" SelectionMode="Single">
+    <CollectionView x:Name="collectionView" SelectionMode="Single" SelectionChanged="collectionView_SelectionChanged">
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <Grid Padding="10">
