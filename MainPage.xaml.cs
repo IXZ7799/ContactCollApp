@@ -20,9 +20,10 @@ public partial class MainPage : ContentPage
         Navigation.PushModalAsync(new CustomerDetails(selectedCust, true), true);
     }
 
-    private void btnAdd_Clicked()
+    private void btnAdd_Clicked(object sender, EventArgs e)
     {
-
+        Customer newCust = new Customer("", "", 0, CustomerCollection.DEFAULT_IMAGE);
+        Navigation.PushModalAsync(new CustomerDetails(newCust, false), true);
     }
 }
 
