@@ -13,7 +13,7 @@ public partial class MainPage : ContentPage
 
     private void populateCustomerData()
     {
-        collectionView.ItemSource = App.CustomerDatabase.GetCustomerList();
+        collectionView.ItemsSource = App.CustomerDatabase.GetCustomerList();
     }
 
     protected override void OnAppearing()
