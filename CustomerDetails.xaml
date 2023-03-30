@@ -21,6 +21,6 @@
         </Grid>
         <Picker x:Name="pckImage" Title="Choose Image" TextColor="DarkKhaki" Margin="20, 0, 20, 0" WidthRequest="150" HorizontalOptions="Start" SelectedIndexChanged="pckImage_SelectedIndexChanged"/>
         <Button Text="Save" Margin="10" x:Name="btnSave" Clicked="btnSave_Clicked"></Button>
-        <Button Text="Delete" Nargin="10" x:Name="btnDelete" Clicked="btnDelete_Clicked"></Button>
+        <Button Text="Delete" Margin="10" x:Name="btnDelete" Clicked="btnDelete_Clicked"></Button>
     </VerticalStackLayout>
 </ContentPage>
