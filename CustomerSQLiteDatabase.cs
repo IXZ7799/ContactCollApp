@@ -29,131 +29,132 @@ namespace ContactCollApp
         {
             "user_astronaut.svg", "user_businessman.svg", "user_detective.svg", "user_doctor.svg", "user_graduate.svg", "user_ninja.svg", "user_nurse.svg", "user_police.svg", "user_robot.svg"
         };
-    }
 
 
 
-    public CustomerSQLiteDatabase()
-    {
-        Init;
-    }
 
-    private void Init()
-    {
-        try
+        public CustomerSQLiteDatabase()
         {
-            if (databaseConnection != null)
+            Init();
+        }
+
+        private void Init()
+        {
+            try
             {
-                CurrentState = "Database exists";
-                return;
-            }
-            DatabasePath = System.IO.Path.Combine(FileSystem.AppDataDirectory, dbFileName)
-            databaseConnection = new SQLiteConnection(DatabasePath);
-            databaseConnection.CreateTable<Customer>();
-            CurrentState = "Database created";
-        }
-        catch (SQLiteException ex)
-        {
-            CurrentState = ex.Message;
-        }
-    }
-
-    public void resetDatabase()
-    {
-        try
-        {
-            databaseConnection.DropTable<Customer>();
-            databaseConnection.CreateTable<Customer>();
-        }
-        catch (SQLiteException ex)
-        {
-            CurrentState = ex.Message;
-        }
-    }
-    public void InsertTestData()
-    {
-        string[] firstNames = new string[] { "Rob", "Jim", "Joe", "Hugo", "Sally", "Tim", "Marty", "Liam", "Art" };
-        string[] lastNames = new string[] { "Smith", "Jones", "Gold", "Boss", "Mile", "Brown", "Lint", "Novak" };
-
-        int imgIndex = 0;
-
-        foreach (string lastName in lastNames)
-        {
-            foreach (string firstName in firstNames)
-            {
-                string name = firstName + " " + lastName;
-
-                Customer newCustomer = new Customer(name, name + "'s house", IdCustomer, imageNames[imgIndex]);
-                imgIndex++;
-                if (imgIndex == imageNames.Length)
+                if (databaseConnection != null)
                 {
-                    imgIndex = 0;
+                    CurrentState = "Database exists";
+                    return;
                 }
-                SaveCustomer(newCustomer);
+                DatabasePath = System.IO.Path.Combine(FileSystem.AppDataDirectory, DbFileName);
+                databaseConnection = new SQLiteConnection(DatabasePath);
+                databaseConnection.CreateTable<Customer>();
+                CurrentState = "Database created";
+            }
+            catch (SQLiteException ex)
+            {
+                CurrentState = ex.Message;
             }
         }
-    }
-    public int SaveCustomer(Customer person)
-    {
-        if (person.ID > 0)
-        {
-            return databaseConnection.Update(person);
-        }
-        else
-        {
-            return databaseConnection.Insert(person);
-        }
-    }
 
-    public List<Customer> GetCustomerList()
-    {
-        try
+        public void resetDatabase()
         {
-            return databaseConnection.Table<Customer>().ToList();
+            try
+            {
+                databaseConnection.DropTable<Customer>();
+                databaseConnection.CreateTable<Customer>();
+            }
+            catch (SQLiteException ex)
+            {
+                CurrentState = ex.Message;
+            }
         }
-        catch (Exception ex)
+        public void InsertTestData()
         {
-            CurrentState = string.Format("Failed to retrieve data. {0}", ex.Message);
-        }
-        return new List<Customer>();
-    }
+            string[] firstNames = new string[] { "Rob", "Jim", "Joe", "Hugo", "Sally", "Tim", "Marty", "Liam", "Art" };
+            string[] lastNames = new string[] { "Smith", "Jones", "Gold", "Boss", "Mile", "Brown", "Lint", "Novak" };
 
-    public List<Customer> SearchCustomerByName(string name)
-    {
-        try
-        {
-            return databaseConnection.Query<Customer>("SELECT * FROM " + CUSTOMER_TABLE + " WHERE " + NAME_COLUMN + " LIKE '%' || ? || '%' OR " + ADDRESS_COLUMN + " LIKE '%' || ? || '%';", new string[] { name, name });
-        }
-        catch (Exception ex)
-        {
-            CurrentState = string.Format("Failed to retrieve data {0}", ex.Message);
-        }
-        return new List<Customer>();
-    }
+            int imgIndex = 0;
 
-    public int DeleteCustomer(Customer person)
-    {
-        try
-        {
-            return databaseConnection.Delete(person);
-        }
-        catch (Exception ex)
-        {
-            CurrentState = string.Format("Failed to retrieve data. {0}", ex.Message);
-        }
-        return 0;
-    }
+            foreach (string lastName in lastNames)
+            {
+                foreach (string firstName in firstNames)
+                {
+                    string name = firstName + " " + lastName;
 
-    public int DeleteAllCustomers()
-    {
-        try
-        {
-            return databaseConnection.DeleteAll<Customer>();
+                    Customer newCustomer = new Customer(name, name + "'s house", IdCustomer, imageNames[imgIndex]);
+                    imgIndex++;
+                    if (imgIndex == imageNames.Length)
+                    {
+                        imgIndex = 0;
+                    }
+                    SaveCustomer(newCustomer);
+                }
+            }
         }
-        catch (Exception ex)
+        public int SaveCustomer(Customer person)
         {
-            CurrentState = string.Format("Failed to retrieve data {0}", ex.Message);
+            if (person.ID > 0)
+            {
+                return databaseConnection.Update(person);
+            }
+            else
+            {
+                return databaseConnection.Insert(person);
+            }
         }
-        return 0;
+
+        public List<Customer> GetCustomerList()
+        {
+            try
+            {
+                return databaseConnection.Table<Customer>().ToList();
+            }
+            catch (Exception ex)
+            {
+                CurrentState = string.Format("Failed to retrieve data. {0}", ex.Message);
+            }
+            return new List<Customer>();
+        }
+
+        public List<Customer> SearchCustomerByName(string name)
+        {
+            try
+            {
+                return databaseConnection.Query<Customer>("SELECT * FROM " + CUSTOMER_TABLE + " WHERE " + NAME_COLUMN + " LIKE '%' || ? || '%' OR " + ADDRESS_COLUMN + " LIKE '%' || ? || '%';", new string[] { name, name });
+            }
+            catch (Exception ex)
+            {
+                CurrentState = string.Format("Failed to retrieve data {0}", ex.Message);
+            }
+            return new List<Customer>();
+        }
+
+        public int DeleteCustomer(Customer person)
+        {
+            try
+            {
+                return databaseConnection.Delete(person);
+            }
+            catch (Exception ex)
+            {
+                CurrentState = string.Format("Failed to retrieve data. {0}", ex.Message);
+            }
+            return 0;
+        }
+
+        public int DeleteAllCustomers()
+        {
+            try
+            {
+                return databaseConnection.DeleteAll<Customer>();
+            }
+            catch (Exception ex)
+            {
+                CurrentState = string.Format("Failed to retrieve data {0}", ex.Message);
+            }
+            return 0;
+        }
     }
 }
