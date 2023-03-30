@@ -55,7 +55,8 @@ public partial class CustomerDetails : ContentPage
 
     private void btnDelete_Clicked(object sender, EventArgs e)
     {
-        App thisApp = Application.Current as App, App.CustomerDatabase.DeleteCustomer(thisApp.selectedCustomer);
+        App thisApp = Application.Current as App;
+        App.CustomerDatabase.DeleteCustomer(thisApp.selectedCustomer);
         Navigation.PopModalAsync();
     }
 }
