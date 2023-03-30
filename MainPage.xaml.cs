@@ -47,5 +47,19 @@ public partial class MainPage : ContentPage
         App.CustomerDatabase.InsertTestData();
         populateCustomerData();
     }
+
+    private void searchCustomer_SearchButtonPressed(object sender, EventArgs e)
+    {
+        string keyword = this.searchCustomer.Text;
+
+        if (keyword == null || keyword.Length == 0)
+        {
+            populateCustomerData();
+        }
+        else
+        {
+            collectionView.ItemsSource = App.CustomerDatabase.SearchCustomerByName(keyword);
+        }
+    }
 }
 
