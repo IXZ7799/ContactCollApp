@@ -4,7 +4,7 @@
              x:Class="ContactCollApp.CustomerDetails"
              Title="CustomerDetails">
     <VerticalStackLayout>
-        <Label Text="Customer Details" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontSize="Large" Margin="0,0,0,30" TextColor="Beige"/>
+        <Label Text="Customer Details" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontSize="Large" Margin="0,0,0,30" TextColor="DarkSlateGrey"/>
         <Grid Padding="10" x:Name="gridCustomer">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
