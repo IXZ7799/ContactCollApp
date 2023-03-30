@@ -24,7 +24,7 @@ public partial class CustomerDetails : ContentPage
         this.imgPic.Source = this.pckImage.SelectedItem as string;
     }
 
-    private async void btnSave_Clicked(object sender, EventArgs e)
+    private void btnSave_Clicked(object sender, EventArgs e)
     {
         string selectedImage = CustomerCollection.DEFAULT_IMAGE;
         string name = this.txtName.Text;
@@ -51,6 +51,5 @@ public partial class CustomerDetails : ContentPage
             Customer newCust = new Customer(name, address, CustomerCollection.IdCustomer++, selectedImage);
             MainPage.currentCustomers.CustomerList.Add(newCust);
         }
-        await Navigation.PopAsync();
     }
 }
