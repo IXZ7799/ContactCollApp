@@ -20,5 +20,9 @@ public partial class MainPage : ContentPage
         Navigation.PushModalAsync(new CustomerDetails(selectedCust, true), true);
     }
 
+    private void btnAdd_Clicked()
+    {
+
+    }
 }
 
