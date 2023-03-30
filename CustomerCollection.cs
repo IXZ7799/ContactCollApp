@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 
 namespace ContactCollApp;
 
@@ -15,34 +12,5 @@ public class CustomerCollection
     public CustomerCollection()
     {
         CustomerList = new ObservableCollection<Customer>();
-    }
-
-
-    public static CustomerCollection MakeTestCustomers()
-    {
-        string[] firstNames = new string[] { "Rob", "Jim", "Joe", "Hugo", "Sally", "Tim", "Marty", "Liam", "Art" };
-        string[] lastNames = new string[] { "Smith", "Jones", "Gold", "Boss", "Mile", "Brown", "Lint", "Novak" };
-
-        CustomerCollection result = new CustomerCollection();
-        int imgIndex = 0;
-        Random sessionRand = new Random();
-
-        foreach (string lastName in lastNames)
-        {
-            foreach (string firstName in firstNames)
-            {
-                string name = firstName + " " + lastName;
-
-                Customer newCustomer = new Customer(name, name + "'s house", IdCustomer, imageNames[imgIndex]);
-                imgIndex++;
-                if (imgIndex == imageNames.Length)
-                {
-                    imgIndex = 0;
-                }
-                result.CustomerList.Add(newCustomer);
-                IdCustomer++;
-            }
-        }
-        return result;
     }
 }
