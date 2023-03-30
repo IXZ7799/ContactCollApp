@@ -12,4 +12,9 @@ public partial class CustomerDetails : ContentPage
         thisApp.selectedCustomer = cust;
         this.gridCustomer.BindingContext = thisApp.selectedCustomer;
     }
+
+    private void pckImage_SelectedIndexChanged()
+    {
+
+    }
 }

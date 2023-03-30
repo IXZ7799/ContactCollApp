@@ -4,7 +4,7 @@ namespace ContactCollApp;
 
 public partial class MainPage : ContentPage
 {
-    public CustomerCollection currentCustomers;
+    public static CustomerCollection currentCustomers;
 
     public MainPage()
     {

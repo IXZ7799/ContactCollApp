@@ -3,18 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ContactCollApp.CustomerDetails"
              Title="CustomerDetails">
-
-    <Grid Padding="10" x:Name="gridCustomer">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-        <Image Grid.RowSpan="2" Source="{Binding ImageName}" WidthRequest="60" HeightRequest="60" Margin="0, 0, 5, 0"></Image>
-        <Label Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold" TextColor="DarkCyan"/>
-        <Label Grid.Row="1" Grid.Column="1" Text="{Binding Address}" FontAttributes="Italic" VerticalOptions="End"/>
-    </Grid>
+    <VerticalStackLayout>
+        <Label Text="Customer Details" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontSize="Large" Margin="0,0,0,30" TextColor="Beige"/>
+        <Grid Padding="10" x:Name="gridCustomer">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="imgPic" Grid.Row="0" Grid.RowSpan="2" Source="{Binding ImageName}" WidthRequest="60" HeightRequest="60" Margin="0,0,5,0"></Image>
+            <Entry x:Name="txtName" Grid.Row="0" Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold" TextColor="MediumVioletRed"/>
+            <Entry x:Name="txtAddress" Grid.Row="1" Grid.Column="1" Text="{Binding Address}" FontAttributes="Italic" VerticalOptions="End"/>
+        </Grid>
+        <Picker x:Name="pckImage" Title="Choose Image" TextColor="DarkKhaki" Margin="20, 0, 20, 0" WidthRequest="150" HorizontalOptions="Start" SelectedIndexChanged="pckImage_SelectedIndexChanged"/>
+        <Button Text="Save" Margin="10" x:Name="btnSave" Clicked="btnSave_Clicked"></Button>
+    </VerticalStackLayout>
 </ContentPage>
