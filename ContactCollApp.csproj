@@ -49,15 +49,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\user-astronaut.svg" />
-	  <None Remove="Resources\Images\user-businessman.svg" />
-	  <None Remove="Resources\Images\user-detective.svg" />
-	  <None Remove="Resources\Images\user-doctor.svg" />
-	  <None Remove="Resources\Images\user-graduate.svg" />
-	  <None Remove="Resources\Images\user-ninja.svg" />
-	  <None Remove="Resources\Images\user-nurse.svg" />
-	  <None Remove="Resources\Images\user-police.svg" />
-	  <None Remove="Resources\Images\user-robot.svg" />
+	  <None Remove="Resources\Images\user_astronaut.svg" />
+	  <None Remove="Resources\Images\user_businessman.svg" />
+	  <None Remove="Resources\Images\user_detective.svg" />
+	  <None Remove="Resources\Images\user_doctor.svg" />
+	  <None Remove="Resources\Images\user_graduate.svg" />
+	  <None Remove="Resources\Images\user_ninja.svg" />
+	  <None Remove="Resources\Images\user_nurse.svg" />
+	  <None Remove="Resources\Images\user_police.svg" />
+	  <None Remove="Resources\Images\user_robot.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
