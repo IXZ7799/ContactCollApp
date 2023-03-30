@@ -31,6 +31,8 @@ namespace ContactCollApp
         };
     }
 
+
+
     public CustomerSQLiteDatabase()
     {
         Init;
@@ -68,7 +70,6 @@ namespace ContactCollApp
             CurrentState = ex.Message;
         }
     }
-
     public void InsertTestData()
     {
         string[] firstNames = new string[] { "Rob", "Jim", "Joe", "Hugo", "Sally", "Tim", "Marty", "Liam", "Art" };
@@ -92,7 +93,6 @@ namespace ContactCollApp
             }
         }
     }
-
     public int SaveCustomer(Customer person)
     {
         if (person.ID > 0)
@@ -115,7 +115,7 @@ namespace ContactCollApp
         {
             CurrentState = string.Format("Failed to retrieve data. {0}", ex.Message);
         }
-        return new List<Customer>;
+        return new List<Customer>();
     }
 
     public List<Customer> SearchCustomerByName(string name)
@@ -128,7 +128,7 @@ namespace ContactCollApp
         {
             CurrentState = string.Format("Failed to retrieve data {0}", ex.Message);
         }
-        return new List<Customer>;
+        return new List<Customer>();
     }
 
     public int DeleteCustomer(Customer person)
