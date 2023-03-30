@@ -44,7 +44,6 @@ public partial class MainPage : ContentPage
     {
         App.CustomerDatabase.DeleteAllCustomers();
         App.CustomerDatabase.resetDatabase();
-        App.CustomerDatabase.InsertTestData();
         populateCustomerData();
     }
 
