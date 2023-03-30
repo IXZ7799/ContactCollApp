@@ -4,9 +4,11 @@
              x:Class="ContactCollApp.MainPage">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <CollectionView x:Name="collectionView" SelectionMode="Single" SelectionChanged="collectionView_SelectionChanged" Grid.Row="0">
+        <SearchBar Grid.Row="0" x:Name="searchCustomer" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="5" SearchButtonPressed="searchCustomer_SearchButtonPressed"></SearchBar>
+        <CollectionView x:Name="collectionView" SelectionMode="Single" SelectionChanged="collectionView_SelectionChanged" Grid.Row="1">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="10">
@@ -25,7 +27,7 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <VerticalStackLayout Grid.Row="0" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,10,10">
+        <VerticalStackLayout Grid.Row="1" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,10,10">
             <ImageButton x:Name="btnAdd" Source="add.png" Aspect="AspectFit" WidthRequest="50" HeightRequest="50" Margin="0,0,10,10" Clicked="btnAdd_Clicked"/>
             <ImageButton x:Name="btnDeleteAll" Source="refresh.png" Aspect="AspectFill" WidthRequest="50" HeightRequest="50" Margin="0,0,10,10" Clicked="btnDeleteAll_Clicked"/>
             <ImageButton x:Name="btnInitData" Source="init.png" Aspect="AspectFit" WidthRequest="50" HeightRequest="50" Margin="0,0,10,10" Clicked="btnInitData_Clicked"/>
