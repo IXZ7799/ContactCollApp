@@ -30,9 +30,6 @@ namespace ContactCollApp
             "user_astronaut.svg", "user_businessman.svg", "user_detective.svg", "user_doctor.svg", "user_graduate.svg", "user_ninja.svg", "user_nurse.svg", "user_police.svg", "user_robot.svg"
         };
 
-
-
-
         public CustomerSQLiteDatabase()
         {
             Init();
@@ -70,29 +67,7 @@ namespace ContactCollApp
                 CurrentState = ex.Message;
             }
         }
-        public void InsertTestData()
-        {
-            string[] firstNames = new string[] { "Rob", "Jim", "Joe", "Hugo", "Sally", "Tim", "Marty", "Liam", "Art" };
-            string[] lastNames = new string[] { "Smith", "Jones", "Gold", "Boss", "Mile", "Brown", "Lint", "Novak" };
-
-            int imgIndex = 0;
-
-            foreach (string lastName in lastNames)
-            {
-                foreach (string firstName in firstNames)
-                {
-                    string name = firstName + " " + lastName;
-
-                    Customer newCustomer = new Customer(name, name + "'s house", 0, imageNames[imgIndex]);
-                    imgIndex++;
-                    if (imgIndex == imageNames.Length)
-                    {
-                        imgIndex = 0;
-                    }
-                    SaveCustomer(newCustomer);
-                }
-            }
-        }
+        
         public int SaveCustomer(Customer person)
         {
             if (person.ID > 0)
