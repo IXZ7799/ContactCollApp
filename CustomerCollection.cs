@@ -10,7 +10,7 @@ public class CustomerCollection
     public static int IdCustomer = 0;
     public ObservableCollection<Customer> CustomerList;
     public const string DEFAULT_IMAGE = "no_image.png";
-    public static string[] imageNames = new string[] { "user-astronaut.svg", "user-businessman.svg", "user-detective.svg", "user-doctor.svg", "user-graduate.svg", "user-ninja.svg", "user-nurse.svg", "user-police.svg", "user-robot.svg" };
+    public static string[] imageNames = new string[] { "user_astronaut.svg", "user_businessman.svg", "user_detective.svg", "user_doctor.svg", "user_graduate.svg", "user_ninja.svg", "user_nurse.svg", "user_police.svg", "user_robot.svg" };
 
     public CustomerCollection()
     {
