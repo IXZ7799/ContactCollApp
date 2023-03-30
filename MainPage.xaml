@@ -7,6 +7,7 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
         <SearchBar Grid.Row="0" x:Name="searchCustomer" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="5" SearchButtonPressed="searchCustomer_SearchButtonPressed"></SearchBar>
         <CollectionView x:Name="collectionView" SelectionMode="Single" SelectionChanged="collectionView_SelectionChanged" Grid.Row="1">
             <CollectionView.ItemTemplate>
@@ -27,6 +28,7 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
         <VerticalStackLayout Grid.Row="1" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,10,10">
             <ImageButton x:Name="btnAdd" Source="user_add.svg" Aspect="AspectFit" WidthRequest="50" HeightRequest="50" Margin="0,0,10,10" Clicked="btnAdd_Clicked"/>
             <ImageButton x:Name="btnDeleteAll" Source="user_remove.svg" Aspect="AspectFill" WidthRequest="50" HeightRequest="50" Margin="0,0,10,10" Clicked="btnDeleteAll_Clicked"/>
