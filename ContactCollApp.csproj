@@ -50,6 +50,8 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\add.png" />
+	  <None Remove="Resources\Images\button_back.svg" />
+	  <None Remove="Resources\Images\button_remove.svg" />
 	  <None Remove="Resources\Images\no_image.png" />
 	  <None Remove="Resources\Images\refresh.png" />
 	  <None Remove="Resources\Images\trash-sharp-solid.svg" />
@@ -61,8 +63,6 @@
 	  <None Remove="Resources\Images\user_ninja.svg" />
 	  <None Remove="Resources\Images\user_nurse.svg" />
 	  <None Remove="Resources\Images\user_police.svg" />
-	  <None Remove="Resources\Images\user_remove.svg" />
-	  <None Remove="Resources\Images\user_remove1.svg" />
 	  <None Remove="Resources\Images\user_robot.svg" />
 	</ItemGroup>
 
