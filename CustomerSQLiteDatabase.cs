@@ -67,7 +67,7 @@ namespace ContactCollApp
                 CurrentState = ex.Message;
             }
         }
-        
+
         public int SaveCustomer(Customer person)
         {
             if (person.ID > 0)
