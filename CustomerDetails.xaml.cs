@@ -62,6 +62,6 @@ public partial class CustomerDetails : ContentPage
 
     private void btnBack_Clicked(object sender, EventArgs e)
     {
-
+        Navigation.PopModalAsync();
     }
 }
