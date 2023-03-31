@@ -62,6 +62,7 @@
 	  <None Remove="Resources\Images\user_nurse.svg" />
 	  <None Remove="Resources\Images\user_police.svg" />
 	  <None Remove="Resources\Images\user_remove.svg" />
+	  <None Remove="Resources\Images\user_remove1.svg" />
 	  <None Remove="Resources\Images\user_robot.svg" />
 	</ItemGroup>
 
