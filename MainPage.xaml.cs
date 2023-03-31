@@ -40,13 +40,6 @@ public partial class MainPage : ContentPage
         populateCustomerData();
     }
 
-    private void btnInitData_Clicked(object sender, EventArgs e)
-    {
-        App.CustomerDatabase.DeleteAllCustomers();
-        App.CustomerDatabase.resetDatabase();
-        populateCustomerData();
-    }
-
     private void searchCustomer_SearchButtonPressed(object sender, EventArgs e)
     {
         string keyword = this.searchCustomer.Text;

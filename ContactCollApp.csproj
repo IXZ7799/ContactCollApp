@@ -50,7 +50,6 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\add.png" />
-	  <None Remove="Resources\Images\init.png" />
 	  <None Remove="Resources\Images\no_image.png" />
 	  <None Remove="Resources\Images\refresh.png" />
 	  <None Remove="Resources\Images\trash-sharp-solid.svg" />
