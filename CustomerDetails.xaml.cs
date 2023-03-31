@@ -59,4 +59,9 @@ public partial class CustomerDetails : ContentPage
         App.CustomerDatabase.DeleteCustomer(thisApp.selectedCustomer);
         Navigation.PopModalAsync();
     }
+
+    private void btnBack_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }

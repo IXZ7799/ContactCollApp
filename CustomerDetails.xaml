@@ -22,5 +22,8 @@
         <Picker x:Name="pckImage" Title="Choose Image" TextColor="DarkKhaki" Margin="20, 0, 20, 0" WidthRequest="150" HorizontalOptions="Start" SelectedIndexChanged="pckImage_SelectedIndexChanged"/>
         <Button Text="Save" Margin="10" x:Name="btnSave" Clicked="btnSave_Clicked"></Button>
         <Button Text="Delete" Margin="10" x:Name="btnDelete" Clicked="btnDelete_Clicked"></Button>
+        <VerticalStackLayout Grid.Row="1" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,10,10">
+            <ImageButton x:Name="btnBack" Source="user_add.svg" Aspect="AspectFit" WidthRequest="50" HeightRequest="50" Margin="0,0,10,10" Clicked="btnBack_Clicked"/>
+        </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
